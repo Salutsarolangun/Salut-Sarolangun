@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALUT SAROLANGUN - Pendaftaran Universitas Terbuka</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0066b3;
+            --secondary-blue: #0080ff;
+            --light-blue: #e6f0ff;
+            --dark-blue: #004280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo i {
+            font-size: 50px;
+            color: var(--primary-blue);
+        }
+        
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .header-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .intro {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .intro h2 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .form-title {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-blue);
+            outline: none;
+        }
+        
+        .upload-group {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 15px;
+            transition: border 0.3s;
+        }
+        
+        .upload-group:hover {
+            border-color: var(--secondary-blue);
+        }
+        
+        .upload-group i {
+            font-size: 40px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .contact-info h2 {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-text h1 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="header-text">
+                <h1>SALUT SAROLANGUN</h1>
+                <p>Universitas Terbuka</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="intro">
+            <h2>Selamat Datang di Portal Pendaftaran</h2>
+            <p>Daftarkan diri Anda untuk menjadi bagian dari Universitas Terbuka melalui layanan SALUT SAROLANGUN. Isi formulir di bawah ini dengan data yang benar dan lengkap.</p>
+        </section>
+        
+        <section class="form-container">
+            <h2 class="form-title">Formulir Pendaftaran</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ttl">Tempat / Tanggal Lahir</label>
+                    <input type="text" id="ttl" name="ttl" required placeholder="Contoh: Jakarta, 17 Agustus 1945">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nik">NIK</label>
+                    <input type="text" id="nik" name="nik" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="alamat">Alamat Lengkap</label>
+                    <textarea id="alamat" name="alamat" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ortu">Nama Ayah/Ibu Kandung</label>
+                    <input type="text" id="ortu" name="ortu" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hp">No Handphone</label>
+                    <input type="tel" id="hp" name="hp" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Aktif</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="prodi">Program Studi yang diambil</label>
+                    <input type="text" id="prodi" name="prodi" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fakultas">Fakultas</label>
+                    <input type="text" id="fakultas" name="fakultas" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Upload Berkas (Maks 2MB per file)</label>
+                    
+                    <div class="upload-group">
+                        <i class="fas fa-id-card"></i>
+                        <p>Upload KTP</p>
+                        <input type="file" id="ktp" accept="image/*,.pdf">
+                    </div>
+                    
+                    <div class="upload-group">
+                        <i class="fas fa-file-certificate"></i>
+                        <p>Upload Scan Ijazah Legalisir Terakhir</p>
+                        <input type="file" id="ijazah" accept="image/*,.pdf">
+                    </div>
+                    
+                    <div class="upload-group">
+                        <i class="fas fa-image"></i>
+                        <p>Upload PAS FOTO 3x4</p>
+                        <input type="file" id="foto3x4" accept="image/*">
+                    </div>
+                    
+                    <div class="upload-group">
+                        <i class="fas fa-image"></i>
+                        <p>Upload PAS FOTO 4x6</p>
+                        <input type="file" id="foto4x6" accept="image/*">
+                    </div>
+                </div>
+                
+                <button type="button" class="btn" onclick="sendToWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+                </button>
+            </form>
+        </section>
+        
+        <section class="contact-info">
+            <h2>Hubungi Kami</h2>
+            <p>Nomor WhatsApp: <strong>085266000829</strong></p>
+            <p>Email: <strong>salutsarolangun@gmail.com</strong></p>
+            
+            <div class="social-links">
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="mailto:salutsarolangun@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 SALUT SAROLANGUN - Layanan Pendaftaran Universitas Terbuka</p>
+    </footer>
+
+    <script>
+        function sendToWhatsApp() {
+            // Mengambil nilai dari form
+            const nama = document.getElementById('nama').value;
+            const ttl = document.getElementById('ttl').value;
+            const nik = document.getElementById('nik').value;
+            const alamat = document.getElementById('alamat').value;
+            const ortu = document.getElementById('ortu').value;
+            const hp = document.getElementById('hp').value;
+            const email = document.getElementById('email').value;
+            const prodi = document.getElementById('prodi').value;
+            const fakultas = document.getElementById('fakultas').value;
+            
+            // Memeriksa apakah semua field telah diisi
+            if (!nama || !ttl || !nik || !alamat || !ortu || !hp || !email || !prodi || !fakultas) {
+                alert('Harap isi semua field yang wajib diisi!');
+                return;
+            }
+            
+            // Membuat pesan untuk dikirim via WhatsApp
+            const message = `Halo, saya ingin mendaftar di Universitas Terbuka melalui SALUT SAROLANGUN. Berikut data saya:%0A%0A` +
+                            `*Nama:* ${nama}%0A` +
+                            `*Tempat/Tanggal Lahir:* ${ttl}%0A` +
+                            `*NIK:* ${nik}%0A` +
+                            `*Alamat:* ${alamat}%0A` +
+                            `*Nama Orang Tua:* ${ortu}%0A` +
+                            `*No. HP:* ${hp}%0A` +
+                            `*Email:* ${email}%0A` +
+                            `*Program Studi:* ${prodi}%0A` +
+                            `*Fakultas:* ${fakultas}%0A%0A` +
+                            `Saya telah mengupload berkas-berkas required. Terima kasih.`;
+            
+            // Membuka link WhatsApp dengan pesan yang telah dibuat
+            window.open(`https://wa.me/6285266000829?text=${message}`, '_blank');
+            
+            // Reset form setelah pengiriman
+            document.getElementById('registrationForm').reset();
+        }
+        
+        // Validasi file size (maksimal 2MB)
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file && file.size > 2 * 1024 * 1024) {
+                    alert('Ukuran file terlalu besar. Maksimal 2MB per file.');
+                    this.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
